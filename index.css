@@ -13,12 +13,17 @@ svg {
     position: absolute
 }
 
+#container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 #background {
-    position: absolute;
+    position: relative;
     z-index: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
 }
 
 #TV {
@@ -29,16 +34,11 @@ svg {
     transform: translate(-50%, -50%);
 }
 
-#monitor {
-    width: 500px;
-    height: 250px;
-    line-height: 0.8em;
-}
 
 #command-line {
     position: absolute;
     top: 38%;
-    left: 26%;
+    left: 25%;
     display: flex;
     margin-top: 0px;
 }
@@ -46,7 +46,7 @@ svg {
 #feedback {
     position: absolute;
     top: 42%;
-    left: 26%;
+    left: 25%;
     width: 550px;
     display: flex;
     margin-top: 0px;
@@ -60,8 +60,7 @@ svg {
 .code {
     font-family: "VT", monospace;
     color: #f7c216;
-    font-size: 25px;
-    font-size: 0.73vw;
+    font-size: 24px;
     line-height: 1em;
 }
 
