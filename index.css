@@ -16,7 +16,6 @@ svg {
 #background {
     position: absolute;
     z-index: 0;
-    width: 75%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -25,7 +24,6 @@ svg {
 #TV {
     position: absolute;
     z-index: 9;
-    width: 75%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
