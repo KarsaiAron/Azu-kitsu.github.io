@@ -1,13 +1,3 @@
-function fn1() {
-    let current_command = document.getElementById("command").value;
-    document.getElementById("current_writing").innerHTML = current_command;
-    console.log(current_command)
-    let character = current_command[current_command.length - 1]; 
-    if (character == " " && character != "") {
-        alert("AAA");
-    }
-}
-
 let cis = {
     "a" : 65,
     "b" : 66,
@@ -64,8 +54,6 @@ power_buzz.src = "./sounds/power-buzz.mp3"
 
 power_buzz.loop = true;
 power_buzz.volume = 0.3
-power_buzz.play();
-
 
 async function print(message, elementID) {
     for (let i = 0; i < message.length; i++) {
@@ -73,9 +61,6 @@ async function print(message, elementID) {
         if (message[i] == "\n") {
             document.getElementById(elementID).appendChild(document.createElement('br'));
         }
-        //if (document.getElementById(elementID).innerHTML[document.getElementById(elementID).innerHTML.length - 1] != message[i]) {
-        //    return;
-        //}
         if (message[i] == "," || message[i] == "." || message[i] == "?" || message[i] == "!" || message[i] == ":") {
             await wait(300)
         } else {
@@ -157,12 +142,10 @@ document.body.addEventListener("keydown", function(event) {
         }
     }
     else if (event.keyCode == 37 && current.length != 0) { //left
-        
         current = current.replace(/█/g, "");
         after = after.replace(/_/g, "");
         after = "_" + current[current.length - 1] + after
         current = current.slice(0, current.length - 1);
-        
     }
     else if (event.keyCode == 39 && after.length != 0) { //right
         current += after[1];
@@ -191,9 +174,3 @@ function blink2() {
     document.getElementById("current_writing").innerHTML = document.getElementById("current_writing").innerHTML.replace(/█/g, "")
     document.getElementById("after_write").innerHTML = document.getElementById("after_write").innerHTML.replace(/█/g, "");
 }
-
-document.body.addEventListener("mousemove", function(event) {
-    var window_width = window.innerWidth;
-    var relative = window_width/2 - event.pageX;
-    console.log(relative);
-})
