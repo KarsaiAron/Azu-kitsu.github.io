@@ -3,6 +3,7 @@
   src: url("./fonts/VT323-Regular.ttf") format("truetype");
 }
 body {
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.9);
   font: 100%;
 }
