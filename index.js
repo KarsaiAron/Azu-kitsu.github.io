@@ -77,12 +77,18 @@ function wait(time) {
     });
 }
 
-let command_answer = {
+let command_answer = {};
+
+schedule_re = "Hello, what are you doing here in this lovely little";
+schedule_ac = "Monday █ Tuesday █ Wednesday █ Thursday █ Friday\n████████████████████████████████████\nVisArt .█ Maths .█ Grammar █ Geography █ Chem\nInformT █ Lit. . █ Lit . . █ Physical .█ French\nPhysics █ French █ Maths . █ English . █ Maths\nChem .. █ Bio .. █ Physics █ Biology . █ English\nInformT █ PhysEd █ InformT █ Math . . .█ InformT\nLit . . █ History█ History █ French . .█ Physics\nEnglish █ HomeR .█ Music . █ . . . . ..█" 
+
+command_answer = {
     "" : "type help to get a list of available commands",
-    "help" : "hi.. \n bye.. \n who am i..",
     "hi" : "Hello, what are you doing here in this lovely little farm?\nwondering about? aaaaaaaaaaaa",
     "bye" : "Aw. You're already going... Come back soon!",
     "who am i" : "The better question is: who are YOU?",
+    "schedule" : schedule_ac,
+    "what is the purpose of this" : "uh, so basically I thought that we had to make a website for github, like, any website, but we actually only needed to upload our schedules :/ lmao,but I actually also did that, so I guess, uh, mission complete?"
 }
   
 window.addEventListener('focus', function() {
@@ -126,11 +132,18 @@ document.body.addEventListener("keydown", function(event) {
     else if (event.keyCode == 13) {
         console.log("you pressed enter")
         let command = current.slice().replace(/█/g, "");
-        let answer = command_answer[command];
-        console.log("you typed: " + command);
-        if (answer != undefined) {
+        if (command == "help") {
             document.getElementById("feeder").innerHTML = "";
-            print(answer, "feeder");
+            let answer = Object.keys(command_answer);
+            print(answer.slice(1, answer.length).join("..\n"), "feeder");
+        }
+        else {
+            let answer = command_answer[command];
+            console.log("you typed: " + command);
+            if (answer != undefined) {
+                document.getElementById("feeder").innerHTML = "";
+                print(answer, "feeder");
+            }
         }
         current = "";
     }

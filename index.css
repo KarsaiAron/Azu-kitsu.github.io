@@ -31,7 +31,7 @@ body {
   position: absolute;
   top: 42%;
   left: 25%;
-  width: 25%;
+  width: 22%;
   display: flex;
   margin-top: 0px;
 }
@@ -42,8 +42,11 @@ body {
 .code {
   font-family: "VT", monospace;
   color: #f7c216;
-  font-size: 150%;
+  font-size: 130%;
   line-height: 1em;
+}
+#feeder {
+  text-align: justify;
 }
 .scanline {
   width: 100%;
